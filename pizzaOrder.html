@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="pizzaStyle.css"
+  </head>
+  
+  
+  <body style="background-color:#dc4405">
+    <h1 class="display-1 text-center">Sabatino's Pizza</h1>
+	<div class="container">
+		<form class="container-fluid mt-0">
+			<div class="menu" id="size">
+				<p>Size:</p>
+				<input type="radio" name="size" value="Personal">Personal
+				<input type="radio" name="size" value="Medium">Medium
+				<input type="radio" name="size" value="Large" checked>Large
+				<input type="radio" name="size" value="Extra Large">Extra Large
+			</div>
+			<div class="menu" id="meats">
+				<p>Meats:</p>
+				<input type="checkbox" class="meat" name="meat" value="Pepperoni">Pepperoni
+				<input type="checkbox" class="meat" name="meat" value="Sausage">Sausage
+				<input type="checkbox" class="meat" name="meat" value="Canadian Bacon">Canadian Bacon
+				<input type="checkbox" class="meat" name="meat" value="Ground Beef">Ground Beef
+				<input type="checkbox" class="meat" name="meat" value="Anchovy">Anchovy
+				<input type="checkbox" class="meat" name="meat" value="Chicken">Chicken
+			</div>
+			<div class="menu" id="veggies">
+				<p>Veggies:</p>
+				<input type="checkbox" class="veg" name="veg" value="Tomatoes">Tomatoes
+				<input type="checkbox" class="veg" name="veg" value="Onions">Onions
+				<input type="checkbox" class="veg" name="veg" value="Olives">Olives
+				<input type="checkbox" class="veg" name="veg" value="Peppers">Green Peppers
+				<input type="checkbox" class="veg" name="veg" value="Mushrooms">Mushrooms
+				<input type="checkbox" class="veg" name="veg" value="Pineapple">Pineapple
+				<input type="checkbox" class="veg" name="veg" value="Spinach">Spinach
+				<input type="checkbox" class="veg" name="veg" value="Jalapeno">Jalapeno
+			</div>
+			<div class="menu" id="cheese">
+				<p>Cheese:</p>
+				<input type="radio" name="cheese" value="Regular" checked>Regular
+				<input type="radio" name="cheese" value="Extra Cheese">Extra Cheese
+				<input type="radio" name="cheese" value="None">No Cheese
+			</div>
+			<div class="menu" id="crust">
+				<p>Crust:</p>
+				<input type="radio" name="crust" value="Plain">Plain Crust
+				<input type="radio" name="crust" value="Garlic Butter">Garlic Butter Crust
+				<input type="radio" name="crust" value="Stuffed">Cheese Stuffed Crust
+				<input type="radio" name="crust" value="Spicy">Spicy Crust
+				<input type="radio" name="crust" value="House Special" checked>House Special Crust
+			</div>
+			<div class="menu" id="sauce">
+				<p>Sauce:</p>
+				<input type="radio" name="sauce" value="Marinara" checked>Marinara Sause
+				<input type="radio" name="sauce" value="White">White Sauce
+				<input type="radio" name="sauce" value="BBQ">Barbeque Sauce
+				<input type="radio" name="sauce" value="None">No Sauce
+			</div>
+			<div class="buttons col-md-4 mx-auto">
+				<p></p>
+				<button class="btn btn-lg btn-secondary" onclick="getInvoice(); return false;">Get Total</button>
+				<input type="reset" class="btn btn-lg btn-secondary">
+			</div>
+		</form>
+	</div>
+	<div class="container mt-5" id="order">
+		<p id="pickles">Your Order</p>
+		<table class="table table-sm">
+			<tr>
+				<td>Size</td>
+				<td id="sizeOrdered"></td>
+				<td id="sizeTotal"></td>
+			</tr>
+			<tr>
+				<td>Meats</td>
+				<td id="meatCount"></td>
+				<td id="meatTotal"></td>
+			</tr>
+			<tr>
+				<td>Veggies</td>
+				<td id="vegCount"></td>
+				<td id="vegTotal"></td>
+			</tr>
+			<tr>
+				<td>Cheese</td>
+				<td id="cheeseOrdered"></td>
+				<td id="cheeseTotal"</td>
+			</tr>
+			<tr>
+				<td>Sauce</td>
+				<td id="sauceOrdered"></td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Crust</td>
+				<td id="crustOrdered"></td>
+				<td id="crustTotal"></td>
+			</tr>
+			<tr>
+				<th>Total</th>
+				<td></td>
+				<th id="total"></th>
+			</tr>
+		</table>
+			
+	</div>
+	<script src="pizzaFunctions.js"></script>
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
+</html>
